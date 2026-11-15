@@ -1,0 +1,52 @@
+[core]
+	editor = nvim
+	pager = delta
+	fsmonitor = true
+[sequence]
+	editor = nvim
+[diff]
+	algorithm = histogram
+	mnemonicPrefix = true
+	tool = nvimdiff
+	colorMoved = zebra
+	renames = copies
+[delta]
+	navigate = true
+	side-by-side = true
+	line-numbers = true
+[merge]
+	tool = nvimdiff
+	conflictStyle = zdiff3
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[fetch]
+	prune = true
+[pull]
+	ff = only
+[checkout]
+	defaultRemote = origin
+[interactive]
+	singleKey = true
+	diffFilter = delta --color-only
+[log]
+	date = iso
+	abbrevCommit = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[status]
+	showUntrackedFiles = all
+[commit]
+	verbose = true
+	status = false
+[feature]
+	manyFiles = true
+[gc]
+	writeCommitGraph = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
