@@ -48,13 +48,11 @@ vim.opt.belloff = 'all'
 -- skip the intro message
 vim.opt.shortmess:append('I')
 
--- Go LSP
-vim.lsp.config('gopls', {
-  cmd = { 'gopls' },
-  filetypes = { 'go', 'gomod', 'gowork' },
-  root_markers = { 'go.mod', '.git' },
-})
-vim.lsp.enable('gopls')
+-- Plugins
+vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
+
+-- Language servers
+vim.lsp.enable({ 'gopls', 'pyright' })
 
 -- Folds 
 vim.opt.foldlevelstart = 99
