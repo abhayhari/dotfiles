@@ -18,9 +18,6 @@ vim.opt.wrap = false
 -- prompt instead of failing on unsaved changes
 vim.opt.confirm = true
 
--- use the system clipboard
-vim.opt.clipboard = 'unnamedplus'
-
 -- search behavior
 vim.opt.ignorecase = true
 vim.opt.smartcase = true

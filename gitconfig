@@ -50,3 +50,5 @@
 	writeCommitGraph = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[index]
+	skipHash = false
