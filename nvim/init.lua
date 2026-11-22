@@ -46,17 +46,26 @@ vim.opt.belloff = 'all'
 vim.opt.shortmess:append('I')
 
 -- Plugins
-vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
+vim.pack.add({
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/nvim-treesitter/nvim-treesitter',
+})
 
 -- Language servers
 vim.lsp.enable({ 'gopls', 'pyright' })
 
--- Folds 
-vim.opt.foldlevelstart = 99
+-- Tree-sitter parsers (async; no-op once installed)
+require('nvim-treesitter').install({ 'go', 'python' })
 
+-- Tree-sitter syntax highlighting (pcall: skip filetypes with no parser)
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'go' },
+  pattern = '*',
   callback = function()
-    vim.wo.foldmethod = 'syntax'   -- window-local option
+    pcall(vim.treesitter.start)
   end,
 })
+
+-- Folds
+vim.opt.foldlevelstart = 99
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
