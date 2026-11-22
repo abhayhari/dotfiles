@@ -2,7 +2,7 @@
 # Install dev tools with Homebrew and oh-my-zsh. Requires Homebrew on PATH.
 set -euo pipefail
 
-brew install neovim git git-delta gh go gopls ripgrep fd fzf bat glow tree tmux
+brew install neovim git git-delta gh go gopls ripgrep fd fzf bat glow tree tmux tree-sitter-cli
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
